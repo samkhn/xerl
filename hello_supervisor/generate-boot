@@ -1,0 +1,22 @@
+#!/usr/bin/env escript
+
+main([ReleaseName]) ->
+  % no_warn_sasl: don't print warnings bc we did not include SASL
+  % look in ebin/ for app definition
+  % silent: return warnings and errors (instead of printing)
+  Options = [no_warn_sasl, {path, ["ebin"]}, silent],
+  case systools:make_script(ReleaseName, Options) of
+    {ok, _Module, []} ->
+      ok;
+    {ok, Module, Warnings} ->
+      log_error("warning: ~ts", [Module:format_warning(Warnings)]);
+    {error, Module, Errors} ->
+      log_error("error: ~ts", [Module:format_error(Errors)]),
+      halt(1)
+  end;
+main(_Args) ->
+  log_error("Usage: ~ts <release-name>~n", [escript:script_name()]),
+  halt(1).
+
+log_error(Format, Args) ->
+  io:format(standard_error, Format, Args).
