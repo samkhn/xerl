@@ -1,6 +1,6 @@
-BUILD_DIR = _build/
-
 ERLC_FLAGS ?= -Wall -Werror
+
+BUILD_DIR = _build/
 
 all: compile
 
@@ -17,4 +17,4 @@ shell: compile
 clean:
 	rm -rf $(BUILD_DIR)
 
-.PHONY: clean
+.PHONY: setup clean
