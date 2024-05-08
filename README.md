@@ -31,14 +31,14 @@ erl -noshell -s x start -s init stop
 
 ## Need to make a release?
 
-Hand written release is in templates/hello_supervisor
+Hand written release is in _template/full_release
 
 ## TOC
 
 | File | Concepts |
 | ---- | -------- |
 | colors | erlang maps |
-| hif | high order funcs and comparators |
+| hof | high order funcs and comparators |
 | month_length | BIF(trunc), if/case guards |
 | weather | lists, io:format, tuples |
 
