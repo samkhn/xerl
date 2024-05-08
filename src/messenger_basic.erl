@@ -36,7 +36,7 @@
 %
 % Config: change the server_node() function to return the name of the node where the messenger server is running
 
--module(messenger).
+-module(messenger_basic).
 
 -export([
          start_server/0,

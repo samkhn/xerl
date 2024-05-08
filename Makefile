@@ -1,4 +1,6 @@
-BUILD_DIR=_build/
+BUILD_DIR = _build/
+
+ERLC_FLAGS ?= -Wall -Werror
 
 all: compile
 
@@ -6,10 +8,10 @@ setup:
 	mkdir -p $(BUILD_DIR)
 
 compile: setup
-	erlc *.erl
+	erlc $(ERLC_FLAGS) src/*.erl
 	mv *.beam $(BUILD_DIR)
 
-shell: compile 
+shell: compile
 	erl -pa $(BUILD_DIR)
 
 clean:
