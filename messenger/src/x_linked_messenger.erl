@@ -1,4 +1,4 @@
--module(messenger_robust).
+-module(x_linked_messenger).
 
 -export([start_server/0, server/0, login/1, logoff/0, message/2, client/2]).
 
@@ -24,7 +24,7 @@ server(UserList) ->
     end.
 
 start_server() ->
-    register(messenger, spawn(messenger_robust, server, [])).
+    register(messenger, spawn(x_linked_messenger, server, [])).
 
 server_login(From, Name, UserList) ->
     case lists:keymember(Name, 2, UserList) of
@@ -62,7 +62,7 @@ server_transfer(From, Name, To, Message, UserList) ->
 login(Name) ->
     case whereis(messenger_client) of
 	undefined ->
-	    register(messenger_client, spawn(messenger_robust, client, [server_node(), Name]));
+	    register(messenger_client, spawn(x_linked_messenger, client, [server_node(), Name]));
 	_ ->
 	    already_logged_in
     end.

@@ -36,7 +36,7 @@
 %
 % Config: change the server_node() function to return the name of the node where the messenger server is running
 
--module(messenger_basic).
+-module(x_basic_messenger).
 
 -export([
          start_server/0,
@@ -47,7 +47,6 @@
          client/2
          ]).
 
-% TODO: replace devbig047 with something like hostname
 server_node() ->
     messenger@devbig047.
 
@@ -66,7 +65,7 @@ server(UserList) ->
     end.
 
 start_server() ->
-    register(messenger, spawn(messenger, server, [[]])).
+    register(messenger, spawn(x_basic_messenger, server, [[]])).
 
 server_logon(From, Name, UserList) ->
     case lists:keymember(Name, 2, UserList) of
@@ -100,7 +99,7 @@ server_transfer(From, Name, To, Message, UserList) ->
 logon(Name) ->
     case whereis(messenger_client) of
         undefined ->
-            register(messenger_client, spawn(messenger, client, [server_node(), Name]));
+            register(messenger_client, spawn(x_basic_messenger, client, [server_node(), Name]));
         _ -> already_logged_on
     end.
 
