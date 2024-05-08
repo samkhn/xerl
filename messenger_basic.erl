@@ -47,6 +47,7 @@
          client/2
          ]).
 
+% TODO: replace devbig047 with something like hostname
 server_node() ->
     messenger@devbig047.
 
