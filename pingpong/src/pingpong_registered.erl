@@ -1,4 +1,4 @@
--module(registered_pingpong).
+-module(pingpong_registered).
 
 -export([start/0, ping/1, pong/0]).
 

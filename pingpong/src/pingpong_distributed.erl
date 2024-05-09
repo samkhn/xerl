@@ -4,11 +4,11 @@
 % 1) open two terminals
 % 2) in terminal A, run $ erl -sname ping
 % 3) in terminal B, run $ erl -sname pong
-% 4) in terminal B, run $ distributed_pingpong:start_pong().
-% 5) in terminal A, run $ distributed_pingpong:start_ping(pong@<other machine name>).
+% 4) in terminal B, run $ pingpong_distributed:start_pong().
+% 5) in terminal A, run $ pingpong_distributed:start_ping(pong@<other machine name>).
 %
 
--module(distributed_pingpong).
+-module(pingpong_distributed).
 
 -export([start_ping/1, start_pong/0, ping/2, pong/0]).
 

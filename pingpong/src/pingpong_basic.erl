@@ -6,7 +6,7 @@
 % If there are no more patterns, we move on to the next message. We repeat the process on the rest of the mailbox. Then we wait for more messages.
 % Messages not matched to a pattern are not discarded (likely because you may hotload a new pattern match in and it'll unblock the queue.
 
--module(pingpong).
+-module(pingpong_basic).
 
 -export([start/0, ping/2, pong/0]).
 

@@ -1,4 +1,4 @@
--module(link).
+-module(pingpong_linked).
 
 -export([start/1, ping/2, pong/0]).
 

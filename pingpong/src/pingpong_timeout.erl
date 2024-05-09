@@ -2,7 +2,7 @@
 %% This form of timeouts are useful for handling external events (outside BEAM).
 %% Timeout timer starts upon entering {ping, PingPID} expression
 
--module(timeout).
+-module(pingpong_timeout).
 
 -export([start_ping/1, start_pong/0, ping/2, pong/0]).
 

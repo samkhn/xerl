@@ -1,0 +1,12 @@
+[ ] data structures
+[ ] multiprocessing errors
+[ ] designing for concurrency
+[ ] otp and building an app with otp
+[ ] building otp applications
+[ ] fsms
+[ ] event handlers
+[ ] supervisors
+[ ] eunit, ets, common test
+[ ] cap/distributed erlang
+[ ] distributed otp
+[ ] mnesia
